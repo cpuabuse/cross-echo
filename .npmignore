@@ -1,0 +1,15 @@
+azure-pipelines.yml
+coverage
+.eslintrc.yml
+.gitignore
+.gitpod.dockerfile
+.gitpod.yml
+*.map
+.nyc_output
+.nycrc.yml
+.prettierrc.yml
+script
+*.ts
+test
+test-results.xml
+tsconfig.json

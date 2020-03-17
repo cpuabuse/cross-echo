@@ -1,0 +1,20 @@
+{
+	"name": "cross-echo",
+	"version": "0.0.1",
+	"description": "Cross platform echo command",
+	"main": "index.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cpuabuse/cross-echo.git"
+	},
+	"keywords": [
+		"echo"
+	],
+	"author": "cpuabuse.com",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/cpuabuse/cross-echo/issues"
+	},
+	"homepage": "https://github.com/cpuabuse/cross-echo#readme"
+}
