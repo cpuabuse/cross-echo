@@ -21,6 +21,45 @@
  */
 
 import { Command } from "commander";
+import { backslashOff } from "./pipeline/disabled-backslash";
+import { backslashOn } from "./pipeline/enabled-backslash";
+import { noNewline } from "./pipeline/no-newline";
+
+interface Options {
+	noTrailingNewline: boolean;
+	disabledBackslash: boolean;
+	enabledBackslash: boolean;
+}
+
+/**
+ * A function performing file processing, mocking behavoir of linux echo command.
+ */
+function echo(text: string, options: Options): void {
+	// Do not output a trailing newline.
+	if (options.noTrailingNewline) {
+		text = noNewline(text); // eslint-disable-line no-param-reassign
+	}
+
+	// Disable interpretation of backslash escape sequences. This is the default.
+	if (options.disabledBackslash) {
+		text = backslashOff(text); // eslint-disable-line no-param-reassign
+	}
+
+	// Enable interpretation of backslash escape sequences
+	if (options.enabledBackslash) {
+		text = backslashOn(text); // eslint-disable-line no-param-reassign
+	}
+	log(text);
+}
+
+/**
+ * Prints a text.
+ * @param text Text to print.
+ */
+function log(text: string): void {
+	// eslint-disable-next-line no-console
+	process.stdout.write(text);
+}
 
 /**
  * Main function.
