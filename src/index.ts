@@ -25,7 +25,7 @@ import { backslashOff } from "./pipeline/disabled-backslash";
 import { backslashOn } from "./pipeline/enabled-backslash";
 import { noNewline } from "./pipeline/no-newline";
 
-interface Options {
+interface Flags {
 	noTrailingNewline: boolean;
 	disabledBackslash: boolean;
 	enabledBackslash: boolean;
@@ -34,19 +34,19 @@ interface Options {
 /**
  * A function performing file processing, mocking behavoir of linux echo command.
  */
-function echo(text: string, options: Options): void {
+function echo(text: string, flags: Flags): void {
 	// Do not output a trailing newline.
-	if (options.noTrailingNewline) {
+	if (flags.noTrailingNewline) {
 		text = noNewline(text); // eslint-disable-line no-param-reassign
 	}
 
 	// Disable interpretation of backslash escape sequences. This is the default.
-	if (options.disabledBackslash) {
+	if (flags.disabledBackslash) {
 		text = backslashOff(text); // eslint-disable-line no-param-reassign
 	}
 
 	// Enable interpretation of backslash escape sequences
-	if (options.enabledBackslash) {
+	if (flags.enabledBackslash) {
 		text = backslashOn(text); // eslint-disable-line no-param-reassign
 	}
 	log(text);
