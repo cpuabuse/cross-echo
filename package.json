@@ -3,7 +3,9 @@
 	"version": "0.0.1",
 	"description": "Cross platform echo command",
 	"main": "index.js",
-	"scripts": {},
+	"scripts": {
+		"build": "tsc"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/cpuabuse/cross-echo.git"
