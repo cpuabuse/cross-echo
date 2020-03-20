@@ -7,8 +7,11 @@
  * Provide the expected data.
  */
 
-// Bell flag
+// Bell
 export const ringing: string = `Ring\u0007
 Ring\u0007
 Ring\u0007
 `;
+
+// Backslash
+export const path: string = "C:\\";

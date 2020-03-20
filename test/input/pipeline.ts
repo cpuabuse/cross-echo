@@ -7,8 +7,11 @@
  * Provide the input data.
  */
 
-// Bell flag
+// Bell
 export const ringing: string = `Ring\\a
 Ring\\a
 Ring\\a
 `;
+
+// Path for the backslash
+export const path: string = "C:\\\\";

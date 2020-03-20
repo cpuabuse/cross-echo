@@ -14,6 +14,16 @@
 const bellNumber: number = 7;
 
 /**
- * The bell option.
+ * ASCII number for backslash character.
+ */
+const backslashNumber: number = 92;
+
+/**
+ * The bell character.
  */
 export const bell: string = String.fromCharCode(bellNumber);
+
+/**
+ * The backslash character.
+ */
+export const backslash: string = String.fromCharCode(backslashNumber);
