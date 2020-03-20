@@ -1,4 +1,5 @@
 azure-pipelines.yml
+/build
 coverage
 .eslintrc.yml
 .gitignore
