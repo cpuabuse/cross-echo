@@ -15,3 +15,10 @@ Ring\u0007
 
 // Backslash
 export const path: string = "C:\\";
+
+/**
+ * Fruit table with tabs.
+ */
+export const fruitTable: string = `Name	Weight	Color
+Orange	200	Orange
+Apple	250	Red`;

@@ -19,6 +19,11 @@ const bellNumber: number = 7;
 const backslashNumber: number = 92;
 
 /**
+ * ASCII number for a tab character.
+ */
+const tabNumber: number = 9;
+
+/**
  * The bell character.
  */
 export const bell: string = String.fromCharCode(bellNumber);
@@ -27,3 +32,8 @@ export const bell: string = String.fromCharCode(bellNumber);
  * The backslash character.
  */
 export const backslash: string = String.fromCharCode(backslashNumber);
+
+/**
+ * The tab character.
+ */
+export const tab: string = String.fromCharCode(tabNumber);

@@ -25,6 +25,9 @@ import { backslashOff } from "./pipeline/disabled-backslash";
 import { backslashOn } from "./pipeline/enabled-backslash";
 import { noNewline } from "./pipeline/no-newline";
 
+/**
+ * Flags provided in the command line.
+ */
 interface Flags {
 	noTrailingNewline: boolean;
 	disabledBackslash: boolean;

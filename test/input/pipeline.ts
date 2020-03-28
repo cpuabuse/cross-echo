@@ -15,3 +15,10 @@ Ring\\a
 
 // Path for the backslash
 export const path: string = "C:\\\\";
+
+/**
+ * Fruit table separated by `\t`.
+ */
+export const fruitTable: string = `Name\\tWeight\\tColor
+Orange\\t200\\tOrange
+Apple\\t250\\tRed`;
