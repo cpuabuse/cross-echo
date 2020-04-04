@@ -10,21 +10,24 @@
 import {
 	animals as expectedBackspace,
 	planets as expectedCarriageReturn,
+	continents as expectedEscape,
 	fruitTable as expectedFruitTable,
 	path as expectedPath,
 	ringing as expectedRinging
 } from "../expected/pipeline";
 import {
 	animals as inputBackspace,
+	planets as inputCarriageReturn,
+	continents as inputEscape,
 	fruitTable as inputFruitTable,
 	path as inputPath,
-	ringing as inputRinging,
-	planets as inputcarriageReturn
+	ringing as inputRinging
 } from "../input/pipeline";
 import { alert } from "../../src/pipeline/auxiliary/alert";
 import { backslashCharacter } from "../../src/pipeline/auxiliary/backslash";
 import { backspaceCharacter } from "../../src/pipeline/auxiliary/backspace";
 import { carriageReturnCharacter } from "../../src/pipeline/auxiliary/carriage-return";
+import { escapeCharacter } from "../../src/pipeline/auxiliary/escape-character";
 import { replaceTab } from "../../src/pipeline/auxiliary/tab";
 import { strictEqual } from "assert";
 
@@ -63,7 +66,16 @@ export function testEscape(): void {
 	describe("carriage return", function() {
 		describe("planets", function() {
 			it("should replace carriage return symbol", function() {
-				strictEqual(carriageReturnCharacter(inputcarriageReturn), expectedCarriageReturn);
+				strictEqual(carriageReturnCharacter(inputCarriageReturn), expectedCarriageReturn);
+			});
+		});
+	});
+
+	// Escape character
+	describe("Escape", function() {
+		describe("continents", function() {
+			it("should replace escape character symbol", function() {
+				strictEqual(escapeCharacter(inputEscape), expectedEscape);
 			});
 		});
 	});

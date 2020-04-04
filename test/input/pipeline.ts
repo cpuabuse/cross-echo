@@ -27,6 +27,10 @@ Venus\\r
 Jupiter\\r
 `;
 
+// Escape character
+export const continents: string = `Asia\\eAfrica\\e
+Europe\\e`;
+
 /**
  * Fruit table separated by `\t`.
  */

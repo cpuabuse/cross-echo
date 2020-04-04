@@ -26,6 +26,11 @@ export const planets: string = `Earth\u000D
 Venus\u000D
 Jupiter\u000D
 `;
+
+// Escape character
+export const continents: string = `Asia\u001BAfrica\u001B
+Europe\u001B`;
+
 /**
  * Fruit table with tabs.
  */
