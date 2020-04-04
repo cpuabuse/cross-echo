@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 /*
-	File: src/index.ts
-	cpuabuse.com
+    Copyright 2020 cpuabuse.com
+    Licensed under the ISC License (https://opensource.org/licenses/ISC)
 */
 
 /**
