@@ -4,7 +4,7 @@
 */
 
 /**
- * Tests the backslash flag.
+ * Performs a series of unit tests for the backslash-escaped characters.
  */
 
 import {
@@ -32,7 +32,7 @@ import { replaceTab } from "../../src/pipeline/auxiliary/tab";
 import { strictEqual } from "assert";
 
 /**
- * A test for the bell flag.
+ * All of the unit tests for the backslash-escaped characters.
  */
 export function testEscape(): void {
 	// Alert
