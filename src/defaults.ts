@@ -14,7 +14,7 @@
 const backslashNumber: number = 92;
 
 /**
- * ASCII nuber for backspace character.
+ * ASCII number for backspace character.
  */
 const backspaceNumber: number = 8;
 
@@ -24,9 +24,19 @@ const backspaceNumber: number = 8;
 const bellNumber: number = 7;
 
 /**
+ * ASCII number for carriage return character.
+ */
+const carriageReturnNumber: number = 13;
+
+/**
  * ASCII number for a tab character.
  */
 const tabNumber: number = 9;
+
+/**
+ * The backslash character.
+ */
+export const backslash: string = String.fromCharCode(backslashNumber);
 
 /**
  * The backspace character.
@@ -39,9 +49,9 @@ export const backspace: string = String.fromCharCode(backspaceNumber);
 export const bell: string = String.fromCharCode(bellNumber);
 
 /**
- * The backslash character.
+ * The carriage return character.
  */
-export const backslash: string = String.fromCharCode(backslashNumber);
+export const carriageReturn: string = String.fromCharCode(carriageReturnNumber);
 
 /**
  * The tab character.
