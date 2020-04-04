@@ -3,6 +3,8 @@
     Licensed under the ISC License (https://opensource.org/licenses/ISC)
 */
 
+import { escapeCharacter } from "./pipeline/auxiliary/escape-character";
+
 /**
  * A file containing all the variables and constants.
  */
@@ -29,6 +31,11 @@ const bellNumber: number = 7;
 const carriageReturnNumber: number = 13;
 
 /**
+ * ASCII number for the escape character(ESC key).
+ */
+const escapeCharacterNumber: number = 27;
+
+/**
  * ASCII number for a tab character.
  */
 const tabNumber: number = 9;
@@ -52,6 +59,11 @@ export const bell: string = String.fromCharCode(bellNumber);
  * The carriage return character.
  */
 export const carriageReturn: string = String.fromCharCode(carriageReturnNumber);
+
+/**
+ * The escape character.
+ */
+export const escapeChar: string = String.fromCharCode(escapeCharacterNumber);
 
 /**
  * The tab character.
