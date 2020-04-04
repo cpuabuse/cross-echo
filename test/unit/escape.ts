@@ -33,9 +33,11 @@ import { strictEqual } from "assert";
  */
 export function testEscape(): void {
 	// Alert
-	describe("ringing", function() {
-		it("should replace bell symbol at the end of each ring", function() {
-			strictEqual(alert(inputRinging), expectedRinging);
+	describe("alert", function() {
+		describe("ringing", function() {
+			it("should replace bell symbol at the end of each ring", function() {
+				strictEqual(alert(inputRinging), expectedRinging);
+			});
 		});
 	});
 
