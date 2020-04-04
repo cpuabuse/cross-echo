@@ -7,6 +7,11 @@
  * Provide the input data.
  */
 
+// Backspace
+export const animals: string = `Lion\\b
+Tiger\\bDog\\b
+Cat\\b`;
+
 // Bell
 export const ringing: string = `Ring\\a
 Ring\\a
