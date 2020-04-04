@@ -21,6 +21,12 @@ Ring\\a
 // Path for the backslash
 export const path: string = "C:\\\\";
 
+// Carraige return
+export const planets: string = `Earth\\r
+Venus\\r
+Jupiter\\r
+`;
+
 /**
  * Fruit table separated by `\t`.
  */

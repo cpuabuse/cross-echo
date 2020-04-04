@@ -7,6 +7,9 @@
  * Provide the expected data.
  */
 
+// Backslash
+export const path: string = "C:\\";
+
 // Backspace
 export const animals: string = `Lion\u0008
 Tiger\u0008Dog\u0008
@@ -18,9 +21,11 @@ Ring\u0007
 Ring\u0007
 `;
 
-// Backslash
-export const path: string = "C:\\";
-
+// Carriage return
+export const planets: string = `Earth\u000D
+Venus\u000D
+Jupiter\u000D
+`;
 /**
  * Fruit table with tabs.
  */
