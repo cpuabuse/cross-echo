@@ -28,8 +28,7 @@ Jupiter\\r
 `;
 
 // Escape character
-export const continents: string = `Asia\\eAfrica\\e
-Europe\\e`;
+export const snakes: string = `Ball python\\e00Anaconda`;
 
 /**
  * Fruit table separated by `\t`.

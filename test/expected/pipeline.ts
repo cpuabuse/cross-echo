@@ -28,8 +28,7 @@ Jupiter\u000D
 `;
 
 // Escape character
-export const continents: string = `Asia\u001BAfrica\u001B
-Europe\u001B`;
+export const snakes: string = `Ball python\u001B00Anaconda`;
 
 /**
  * Fruit table with tabs.

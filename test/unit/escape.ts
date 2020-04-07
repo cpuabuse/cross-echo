@@ -10,18 +10,18 @@
 import {
 	animals as expectedBackspace,
 	planets as expectedCarriageReturn,
-	continents as expectedEscape,
 	fruitTable as expectedFruitTable,
 	path as expectedPath,
-	ringing as expectedRinging
+	ringing as expectedRinging,
+	snakes as expectedSnakes
 } from "../expected/pipeline";
 import {
 	animals as inputBackspace,
 	planets as inputCarriageReturn,
-	continents as inputEscape,
 	fruitTable as inputFruitTable,
 	path as inputPath,
-	ringing as inputRinging
+	ringing as inputRinging,
+	snakes as inputSnakes
 } from "../input/pipeline";
 import { alert } from "../../src/pipeline/auxiliary/alert";
 import { backslashCharacter } from "../../src/pipeline/auxiliary/backslash";
@@ -75,7 +75,7 @@ export function testEscape(): void {
 	describe("Escape", function() {
 		describe("continents", function() {
 			it("should replace escape character symbol", function() {
-				strictEqual(escapeCharacter(inputEscape), expectedEscape);
+				strictEqual(escapeCharacter(inputSnakes), expectedSnakes);
 			});
 		});
 	});
