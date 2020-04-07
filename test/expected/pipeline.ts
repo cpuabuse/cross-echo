@@ -7,27 +7,31 @@
  * Provide the expected data.
  */
 
-// Backslash
+/**
+ * A directory path with a backslash.
+ */
 export const path: string = "C:\\";
 
-// Backspace
-export const animals: string = `Lion\u0008
-Tiger\u0008Dog\u0008
-Cat\u0008`;
+/**
+ * A list of animals with backspaces between them.
+ */
+export const animals: string = `Lion\u0008Tiger\u0008Dog\u0008`;
 
-// Bell
+/**
+ * A sequence of rings with the bell character.
+ */
 export const ringing: string = `Ring\u0007
 Ring\u0007
-Ring\u0007
-`;
+Ring\u0007`;
 
-// Carriage return
-export const planets: string = `Earth\u000D
-Venus\u000D
-Jupiter\u000D
-`;
+/**
+ * A list of planets with carriage returns.
+ */
+export const planets: string = `Earth\u000DVenus\u000DJupiter\u000D`;
 
-// Escape character
+/**
+ * A list of snakes with the command escaped.
+ */
 export const snakes: string = `Ball python\u001B00Anaconda`;
 
 /**

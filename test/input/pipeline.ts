@@ -1,33 +1,37 @@
 /*
-    Copyright 2020 cpuabuse.com
-    Licensed under the ISC License (https://opensource.org/licenses/ISC)
+	Copyright 2020 cpuabuse.com
+	Licensed under the ISC License (https://opensource.org/licenses/ISC)
 */
 
 /**
  * Provide the input data.
  */
 
-// Backspace
-export const animals: string = `Lion\\b
-Tiger\\bDog\\b
-Cat\\b`;
+/**
+ * A list of animals separated by `\b`.
+ */
+export const animals: string = `Lion\\bTiger\\bDog\\b`;
 
-// Bell
+/**
+ * Rings separated by `\a`
+ */
 export const ringing: string = `Ring\\a
 Ring\\a
-Ring\\a
-`;
+Ring\\a`;
 
-// Path for the backslash
+/**
+ * A path separated by `\`
+ */
 export const path: string = "C:\\\\";
 
-// Carraige return
-export const planets: string = `Earth\\r
-Venus\\r
-Jupiter\\r
-`;
+/**
+ * A list of planets separated by `\r`
+ */
+export const planets: string = `Earth\\rVenus\\rJupiter\\r`;
 
-// Escape character
+/**
+ * A list of snakes separated by `\e`
+ */
 export const snakes: string = `Ball python\\e00Anaconda`;
 
 /**
