@@ -35,59 +35,59 @@ import { strictEqual } from "assert";
  * All of the unit tests for the backslash-escaped characters.
  */
 export function testEscape(): void {
-	// Alert
-	describe("alert", function() {
-		describe("ringing", function() {
-			it("should replace bell symbol at the end of each ring", function() {
-				strictEqual(replaceAlert(inputRinging), expectedRinging);
+	describe("escape", function() {
+		// Alert
+		describe("alert", function() {
+			describe("ringing", function() {
+				it("should replace bell symbol at the end of each ring", function() {
+					strictEqual(replaceAlert(inputRinging), expectedRinging);
+				});
 			});
 		});
-	});
 
-	// Backslash
-	describe("backslash", function() {
-		describe("path", function() {
-			it("should have a single backslash", function() {
-				strictEqual(replaceBackslashCharacter(inputPath), expectedPath);
+		// Backslash
+		describe("backslash", function() {
+			describe("path", function() {
+				it("should have a single backslash", function() {
+					strictEqual(replaceBackslashCharacter(inputPath), expectedPath);
+				});
 			});
 		});
-	});
 
-	// Backspace
-	describe("backspace", function() {
-		describe("animals", function() {
-			it("should replace backspace symbol", function() {
-				strictEqual(replaceBackspaceCharacter(inputBackspace), expectedBackspace);
+		// Backspace
+		describe("backspace", function() {
+			describe("animals", function() {
+				it("should replace backspace symbol", function() {
+					strictEqual(replaceBackspaceCharacter(inputBackspace), expectedBackspace);
+				});
 			});
 		});
-	});
 
-	// Carriage return
-	describe("carriage return", function() {
-		describe("planets", function() {
-			it("should replace carriage return symbol", function() {
-				strictEqual(replaceCarriageReturnCharacter(inputCarriageReturn), expectedCarriageReturn);
+		// Carriage return
+		describe("carriage return", function() {
+			describe("planets", function() {
+				it("should replace carriage return symbol", function() {
+					strictEqual(replaceCarriageReturnCharacter(inputCarriageReturn), expectedCarriageReturn);
+				});
 			});
 		});
-	});
 
-	// Escape character
-	describe("Escape", function() {
-		describe("continents", function() {
-			it("should replace escape character symbol", function() {
-				strictEqual(replaceEscapeCharacter(inputSnakes), expectedSnakes);
+		// Escape character
+		describe("escape", function() {
+			describe("snakes", function() {
+				it("should replace escape character symbol", function() {
+					strictEqual(replaceEscapeCharacter(inputSnakes), expectedSnakes);
+				});
 			});
 		});
-	});
 
-	// Tab
-	describe("tab", function() {
-		describe("fruitTable", function() {
-			it("should have tables", function() {
-				strictEqual(replaceTabCharacter(inputFruitTable), expectedFruitTable);
+		// Tab
+		describe("tab", function() {
+			describe("fruitTable", function() {
+				it("should have tables", function() {
+					strictEqual(replaceTabCharacter(inputFruitTable), expectedFruitTable);
+				});
 			});
 		});
 	});
 }
-
-testEscape();
