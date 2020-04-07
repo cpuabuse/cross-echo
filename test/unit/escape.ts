@@ -23,12 +23,12 @@ import {
 	ringing as inputRinging,
 	snakes as inputSnakes
 } from "../input/pipeline";
-import { alert } from "../../src/pipeline/auxiliary/alert";
-import { backslashCharacter } from "../../src/pipeline/auxiliary/backslash";
-import { backspaceCharacter } from "../../src/pipeline/auxiliary/backspace";
-import { carriageReturnCharacter } from "../../src/pipeline/auxiliary/carriage-return";
-import { escapeCharacter } from "../../src/pipeline/auxiliary/escape-character";
-import { replaceTab } from "../../src/pipeline/auxiliary/tab";
+import { replaceAlert } from "../../src/pipeline/auxiliary/alert";
+import { replaceBackslashCharacter } from "../../src/pipeline/auxiliary/backslash";
+import { replaceBackspaceCharacter } from "../../src/pipeline/auxiliary/backspace";
+import { replaceCarriageReturnCharacter } from "../../src/pipeline/auxiliary/carriage-return";
+import { replaceEscapeCharacter } from "../../src/pipeline/auxiliary/escape-character";
+import { replaceTabCharacter } from "../../src/pipeline/auxiliary/tab";
 import { strictEqual } from "assert";
 
 /**
@@ -39,7 +39,7 @@ export function testEscape(): void {
 	describe("alert", function() {
 		describe("ringing", function() {
 			it("should replace bell symbol at the end of each ring", function() {
-				strictEqual(alert(inputRinging), expectedRinging);
+				strictEqual(replaceAlert(inputRinging), expectedRinging);
 			});
 		});
 	});
@@ -48,7 +48,7 @@ export function testEscape(): void {
 	describe("backslash", function() {
 		describe("path", function() {
 			it("should have a single backslash", function() {
-				strictEqual(backslashCharacter(inputPath), expectedPath);
+				strictEqual(replaceBackslashCharacter(inputPath), expectedPath);
 			});
 		});
 	});
@@ -57,7 +57,7 @@ export function testEscape(): void {
 	describe("backspace", function() {
 		describe("animals", function() {
 			it("should replace backspace symbol", function() {
-				strictEqual(backspaceCharacter(inputBackspace), expectedBackspace);
+				strictEqual(replaceBackspaceCharacter(inputBackspace), expectedBackspace);
 			});
 		});
 	});
@@ -66,7 +66,7 @@ export function testEscape(): void {
 	describe("carriage return", function() {
 		describe("planets", function() {
 			it("should replace carriage return symbol", function() {
-				strictEqual(carriageReturnCharacter(inputCarriageReturn), expectedCarriageReturn);
+				strictEqual(replaceCarriageReturnCharacter(inputCarriageReturn), expectedCarriageReturn);
 			});
 		});
 	});
@@ -75,7 +75,7 @@ export function testEscape(): void {
 	describe("Escape", function() {
 		describe("continents", function() {
 			it("should replace escape character symbol", function() {
-				strictEqual(escapeCharacter(inputSnakes), expectedSnakes);
+				strictEqual(replaceEscapeCharacter(inputSnakes), expectedSnakes);
 			});
 		});
 	});
@@ -84,7 +84,7 @@ export function testEscape(): void {
 	describe("tab", function() {
 		describe("fruitTable", function() {
 			it("should have tables", function() {
-				strictEqual(replaceTab(inputFruitTable), expectedFruitTable);
+				strictEqual(replaceTabCharacter(inputFruitTable), expectedFruitTable);
 			});
 		});
 	});

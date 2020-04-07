@@ -8,6 +8,6 @@ import { carriageReturn } from "../../defaults";
 /**
  * A literal carriage return character.
  */
-export function carriageReturnCharacter(text: string): string {
+export function replaceCarriageReturnCharacter(text: string): string {
 	return text.split("\\r").join(carriageReturn);
 }

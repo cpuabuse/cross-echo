@@ -8,6 +8,6 @@ import { escapeChar } from "../../defaults";
 /**
  * The escape character; equivalent to pressing the escape key.
  */
-export function escapeCharacter(text: string): string {
+export function replaceEscapeCharacter(text: string): string {
 	return text.split("\\e").join(escapeChar);
 }

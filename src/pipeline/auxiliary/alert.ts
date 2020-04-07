@@ -8,6 +8,6 @@ import { bell } from "../../defaults";
 /**
  * An alert (The BELL character).
  */
-export function alert(text: string): string {
+export function replaceAlert(text: string): string {
 	return text.split("\\a").join(bell);
 }

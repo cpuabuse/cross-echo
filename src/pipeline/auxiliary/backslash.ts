@@ -8,6 +8,6 @@ import { backslash } from "../../defaults";
 /**
  * A literal backslash character ("\").
  */
-export function backslashCharacter(text: string): string {
+export function replaceBackslashCharacter(text: string): string {
 	return text.split("\\\\").join(backslash);
 }
