@@ -35,6 +35,11 @@ export const planets: string = `Earth\\rVenus\\rJupiter\\r`;
 export const snakes: string = `Ball python\\e00Anaconda`;
 
 /**
+ * A list of countries separated by `\f`
+ */
+export const countries: string = `Colombia\\fMadagascar\\f`;
+
+/**
  * Fruit table separated by `\t`.
  */
 export const fruitTable: string = `Name\\tWeight\\tColor

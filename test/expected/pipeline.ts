@@ -18,7 +18,7 @@ export const path: string = "C:\\";
 export const animals: string = `Lion\u0008Tiger\u0008Dog\u0008`;
 
 /**
- * A sequence of rings with the bell character.
+ * A sequence of rings with the alert character.
  */
 export const ringing: string = `Ring\u0007
 Ring\u0007
@@ -33,6 +33,11 @@ export const planets: string = `Earth\u000DVenus\u000DJupiter\u000D`;
  * A list of snakes with the command escaped.
  */
 export const snakes: string = `Ball python\u001B00Anaconda`;
+
+/**
+ * A list of countries with form feed.
+ */
+export const countries: string = `Colombia\u000CMadagascar\u000C`;
 
 /**
  * Fruit table with tabs.
