@@ -21,9 +21,6 @@
  */
 
 import { Command } from "commander";
-import { backslashOff } from "./pipeline/disabled-backslash";
-import { backslashOn } from "./pipeline/enabled-backslash";
-import { noNewline } from "./pipeline/no-newline";
 
 /**
  * Flags provided in the command line.
@@ -39,19 +36,20 @@ interface Flags {
  */
 function echo(text: string, flags: Flags): void {
 	// Do not output a trailing newline.
-	if (flags.noTrailingNewline) {
-		text = noNewline(text); // eslint-disable-line no-param-reassign
-	}
 
-	// Disable interpretation of backslash escape sequences. This is the default.
-	if (flags.disabledBackslash) {
-		text = backslashOff(text); // eslint-disable-line no-param-reassign
-	}
+	// if (flags.noTrailingNewline) {
+	// 	text = noNewline(text); // eslint-disable-line no-param-reassign
+	// }
 
-	// Enable interpretation of backslash escape sequences
-	if (flags.enabledBackslash) {
-		text = backslashOn(text); // eslint-disable-line no-param-reassign
-	}
+	// // Disable interpretation of backslash escape sequences. This is the default.
+	// if (flags.disabledBackslash) {
+	// 	text = backslashOff(text); // eslint-disable-line no-param-reassign
+	// }
+
+	// // Enable interpretation of backslash escape sequences
+	// if (flags.enabledBackslash) {
+	// 	text = backslashOn(text); // eslint-disable-line no-param-reassign
+	// }
 	log(text);
 }
 

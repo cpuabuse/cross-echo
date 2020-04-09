@@ -8,20 +8,20 @@
  */
 
 import {
-	animals as expectedBackspace,
-	planets as expectedCarriageReturn,
+	animals as expectedAnimals,
 	countries as expectedCountries,
 	fruitTable as expectedFruitTable,
 	path as expectedPath,
+	planets as expectedPlanets,
 	ringing as expectedRinging,
 	snakes as expectedSnakes
 } from "../expected/pipeline";
 import {
-	animals as inputBackspace,
-	planets as inputCarriageReturn,
+	animals as inputAnimals,
 	countries as inputCountries,
 	fruitTable as inputFruitTable,
 	path as inputPath,
+	planets as inputPlanets,
 	ringing as inputRinging,
 	snakes as inputSnakes
 } from "../input/pipeline";
@@ -61,7 +61,7 @@ export function testEscape(): void {
 		describe("backspace", function() {
 			describe("animals", function() {
 				it("should replace backspace symbol", function() {
-					strictEqual(replaceBackspaceCharacter(inputBackspace), expectedBackspace);
+					strictEqual(replaceBackspaceCharacter(inputAnimals), expectedAnimals);
 				});
 			});
 		});
@@ -70,7 +70,7 @@ export function testEscape(): void {
 		describe("carriage return", function() {
 			describe("planets", function() {
 				it("should replace carriage return symbol", function() {
-					strictEqual(replaceCarriageReturnCharacter(inputCarriageReturn), expectedCarriageReturn);
+					strictEqual(replaceCarriageReturnCharacter(inputPlanets), expectedPlanets);
 				});
 			});
 		});

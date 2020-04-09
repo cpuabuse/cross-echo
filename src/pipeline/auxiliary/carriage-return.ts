@@ -3,10 +3,16 @@
 	Licensed under the ISC License (https://opensource.org/licenses/ISC)
 */
 
+/**
+ * Carriage return replacement.
+ */
+
 import { carriageReturn } from "../../defaults";
 
 /**
- * A literal carriage return character.
+ * A function that replaces `\r` with the carriage return character.
+ * @param text String to replace
+ * @returns String with replaced characters
  */
 export function replaceCarriageReturnCharacter(text: string): string {
 	return text.split("\\r").join(carriageReturn);

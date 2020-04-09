@@ -3,11 +3,17 @@
 	Licensed under the ISC License (https://opensource.org/licenses/ISC)
 */
 
-import { bell } from "../../defaults";
+/**
+ * Alert replacement.
+ */
+
+import { alert } from "../../defaults";
 
 /**
- * An alert (The BELL character).
+ * A function that replaces `\a` with the alert character.
+ * @param text String to replace
+ * @returns String with replaced characters
  */
-export function replaceAlert(text: string): string {
-	return text.split("\\a").join(bell);
+export function replaceAlertCharacter(text: string): string {
+	return text.split("\\a").join(alert);
 }

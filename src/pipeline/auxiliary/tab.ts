@@ -4,7 +4,7 @@
 */
 
 /**
- *  Tab replacement.
+ * Tab replacement.
  */
 
 import { tab } from "../../defaults";
@@ -12,6 +12,7 @@ import { tab } from "../../defaults";
 /**
  * It replaces `\t` with tab.
  * @param text String to replace
+ * @returns String with replaced characters
  */
 export function replaceTabCharacter(text: string): string {
 	return text.split("\\t").join(tab);
