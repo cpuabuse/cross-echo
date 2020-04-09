@@ -37,7 +37,7 @@ export const snakes: string = `Ball python\\e00Anaconda`;
 /**
  * A list of countries separated by `\f`
  */
-export const countries: string = `Colombia\\fMadagascar\\f`;
+export const countries: string = `Colombia\\fMadagascar\\fEgypt`;
 
 /**
  * Fruit table separated by `\t`.
@@ -45,3 +45,8 @@ export const countries: string = `Colombia\\fMadagascar\\f`;
 export const fruitTable: string = `Name\\tWeight\\tColor
 Orange\\t200\\tOrange
 Apple\\t250\\tRed`;
+
+/**
+ * A list of beverages separated by `\v`
+ */
+export const beverages: string = `Whiskey\\vVodka\\vCola`;

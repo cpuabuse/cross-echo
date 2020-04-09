@@ -1,5 +1,5 @@
 /*
-	Copyright 2020 cpuabuse.com
+Copyright 2020 cpuabuse.com
 	Licensed under the ISC License (https://opensource.org/licenses/ISC)
 */
 
@@ -8,20 +8,29 @@
  */
 
 // Not sorted because dependent
-/**
- * ASCII number for backslash character.
- */
-const backslashNumber: number = 92;
-
-/**
- * ASCII number for backspace character.
- */
-const backspaceNumber: number = 8;
 
 /**
  * ASCII number for the alert(bell) character.
  */
 const alertNumber: number = 7;
+
+/**
+ * ASCII number for backspace character.
+ */
+const backspaceNumber: number = 8;
+/**
+ * ASCII number for tab character.
+ */
+const tabNumber: number = 9;
+/**
+ * ASCII number for vertical tab character.
+ */
+const verticalTabNumber: number = 11;
+
+/**
+ * ASCII number for the form feed character.
+ */
+export const formFeedNumber: number = 12;
 
 /**
  * ASCII number for carriage return character.
@@ -34,14 +43,9 @@ const carriageReturnNumber: number = 13;
 const escapeNumber: number = 27;
 
 /**
- * ASCII number for the form feed character.
+ * ASCII number for backslash character.
  */
-export const formFeedNumber: number = 12;
-
-/**
- * ASCII number for a tab character.
- */
-const tabNumber: number = 9;
+const backslashNumber: number = 92;
 
 /**
  * The backslash character.
@@ -77,3 +81,8 @@ export const formFeed: string = String.fromCharCode(formFeedNumber);
  * The tab character.
  */
 export const tab: string = String.fromCharCode(tabNumber);
+
+/**
+ * The vertical tab character.
+ */
+export const verticalTab: string = String.fromCharCode(verticalTabNumber);

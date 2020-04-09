@@ -9,6 +9,7 @@
 
 import {
 	animals as expectedAnimals,
+	beverages as expectedBeverages,
 	countries as expectedCountries,
 	fruitTable as expectedFruitTable,
 	path as expectedPath,
@@ -18,6 +19,7 @@ import {
 } from "../expected/pipeline";
 import {
 	animals as inputAnimals,
+	beverages as inputBeverages,
 	countries as inputCountries,
 	fruitTable as inputFruitTable,
 	path as inputPath,
@@ -32,6 +34,7 @@ import { replaceCarriageReturnCharacter } from "../../src/pipeline/auxiliary/car
 import { replaceEscapeCharacter } from "../../src/pipeline/auxiliary/escape-character";
 import { replaceFormFeedCharacter } from "../../src/pipeline/auxiliary/form-feed";
 import { replaceTabCharacter } from "../../src/pipeline/auxiliary/tab";
+import { replaceVerticalTabCharacter } from "../../src/pipeline/auxiliary/vertical-tab";
 import { strictEqual } from "assert";
 
 /**
@@ -42,7 +45,7 @@ export function testEscape(): void {
 		// Alert
 		describe("alert", function() {
 			describe("ringing", function() {
-				it("should replace alert symbol at the end of each ring", function() {
+				it("should have alert character at the end of each ring", function() {
 					strictEqual(replaceAlertCharacter(inputRinging), expectedRinging);
 				});
 			});
@@ -60,7 +63,7 @@ export function testEscape(): void {
 		// Backspace
 		describe("backspace", function() {
 			describe("animals", function() {
-				it("should replace backspace symbol", function() {
+				it("should have backspace characters", function() {
 					strictEqual(replaceBackspaceCharacter(inputAnimals), expectedAnimals);
 				});
 			});
@@ -69,7 +72,7 @@ export function testEscape(): void {
 		// Carriage return
 		describe("carriage return", function() {
 			describe("planets", function() {
-				it("should replace carriage return symbol", function() {
+				it("should have carriage return characters", function() {
 					strictEqual(replaceCarriageReturnCharacter(inputPlanets), expectedPlanets);
 				});
 			});
@@ -78,7 +81,7 @@ export function testEscape(): void {
 		// Escape character
 		describe("escape", function() {
 			describe("snakes", function() {
-				it("should replace escape character symbol", function() {
+				it("should have escape characters", function() {
 					strictEqual(replaceEscapeCharacter(inputSnakes), expectedSnakes);
 				});
 			});
@@ -87,7 +90,7 @@ export function testEscape(): void {
 		// Form feed
 		describe("formFeed", function() {
 			describe("countries", function() {
-				it("should replace form feed character symbol", function() {
+				it("should have form feed characters", function() {
 					strictEqual(replaceFormFeedCharacter(inputCountries), expectedCountries);
 				});
 			});
@@ -96,8 +99,17 @@ export function testEscape(): void {
 		// Tab
 		describe("tab", function() {
 			describe("fruitTable", function() {
-				it("should have tables", function() {
+				it("should have tabs", function() {
 					strictEqual(replaceTabCharacter(inputFruitTable), expectedFruitTable);
+				});
+			});
+		});
+
+		// Vertical tab
+		describe("verticalTab", function() {
+			describe("beverages", function() {
+				it("should have vertical tabs", function() {
+					strictEqual(replaceVerticalTabCharacter(inputBeverages), expectedBeverages);
 				});
 			});
 		});

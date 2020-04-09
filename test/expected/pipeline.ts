@@ -37,7 +37,7 @@ export const snakes: string = `Ball python\u001B00Anaconda`;
 /**
  * A list of countries with form feed.
  */
-export const countries: string = `Colombia\u000CMadagascar\u000C`;
+export const countries: string = `Colombia\u000CMadagascar\u000CEgypt`;
 
 /**
  * Fruit table with tabs.
@@ -45,3 +45,8 @@ export const countries: string = `Colombia\u000CMadagascar\u000C`;
 export const fruitTable: string = `Name	Weight	Color
 Orange	200	Orange
 Apple	250	Red`;
+
+/**
+ * List of beverages with vertical tabs.
+ */
+export const beverages: string = `Whiskey\u000BVodka\u000BCola`;
