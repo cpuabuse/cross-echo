@@ -3,8 +3,6 @@
 	Licensed under the ISC License (https://opensource.org/licenses/ISC)
 */
 
-import { escapeCharacter } from "./pipeline/auxiliary/escape-character";
-
 /**
  * A file containing all the variables and constants.
  */
@@ -21,9 +19,9 @@ const backslashNumber: number = 92;
 const backspaceNumber: number = 8;
 
 /**
- * ASCII number for bell character.
+ * ASCII number for the alert(bell) character.
  */
-const bellNumber: number = 7;
+const alertNumber: number = 7;
 
 /**
  * ASCII number for carriage return character.
@@ -33,7 +31,12 @@ const carriageReturnNumber: number = 13;
 /**
  * ASCII number for the escape character(ESC key).
  */
-const escapeCharacterNumber: number = 27;
+const escapeNumber: number = 27;
+
+/**
+ * ASCII number for the form feed character.
+ */
+export const formFeedNumber: number = 12;
 
 /**
  * ASCII number for a tab character.
@@ -51,9 +54,9 @@ export const backslash: string = String.fromCharCode(backslashNumber);
 export const backspace: string = String.fromCharCode(backspaceNumber);
 
 /**
- * The bell character.
+ * The alert character.
  */
-export const bell: string = String.fromCharCode(bellNumber);
+export const alert: string = String.fromCharCode(alertNumber);
 
 /**
  * The carriage return character.
@@ -63,7 +66,12 @@ export const carriageReturn: string = String.fromCharCode(carriageReturnNumber);
 /**
  * The escape character.
  */
-export const escapeChar: string = String.fromCharCode(escapeCharacterNumber);
+export const escape: string = String.fromCharCode(escapeNumber);
+
+/**
+ * The form feed character.
+ */
+export const formFeed: string = String.fromCharCode(formFeedNumber);
 
 /**
  * The tab character.
