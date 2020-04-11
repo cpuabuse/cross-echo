@@ -50,3 +50,13 @@ Apple\\t250\\tRed`;
  * A list of beverages separated by `\v`
  */
 export const beverages: string = `Whiskey\\vVodka\\vCola`;
+
+/**
+ * A list of junk food sepated by `\c`
+ */
+export const junkFood: string = `Hot-dog\\cHamburguer\\cPizza`;
+
+/**
+ * A list of martial-arts separated by `\n`
+ */
+export const martialArts: string = `Karate\\nJiu-Jitsu\\nBoxe`;

@@ -50,3 +50,13 @@ Apple	250	Red`;
  * List of beverages with vertical tabs.
  */
 export const beverages: string = `Whiskey\u000BVodka\u000BCola`;
+
+/**
+ * List of Junk foods with End of text character.
+ */
+export const junkFood: string = `Hot-dog\u0003Hamburguer\u0003Pizza`;
+
+/**
+ * List of martial-arts with newline character.
+ */
+export const martialArts: string = `Karate\u000AJiu-Jitsu\u000ABoxe`;

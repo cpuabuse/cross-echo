@@ -12,6 +12,8 @@ import {
 	beverages as expectedBeverages,
 	countries as expectedCountries,
 	fruitTable as expectedFruitTable,
+	junkFood as expectedJunkFood,
+	martialArts as expectedMartialArts,
 	path as expectedPath,
 	planets as expectedPlanets,
 	ringing as expectedRinging,
@@ -22,6 +24,8 @@ import {
 	beverages as inputBeverages,
 	countries as inputCountries,
 	fruitTable as inputFruitTable,
+	junkFood as inputJunkFood,
+	martialArts as inputMartialArts,
 	path as inputPath,
 	planets as inputPlanets,
 	ringing as inputRinging,
@@ -31,10 +35,12 @@ import { replaceAlertCharacter } from "../../src/pipeline/auxiliary/alert";
 import { replaceBackslashCharacter } from "../../src/pipeline/auxiliary/backslash";
 import { replaceBackspaceCharacter } from "../../src/pipeline/auxiliary/backspace";
 import { replaceCarriageReturnCharacter } from "../../src/pipeline/auxiliary/carriage-return";
+import { replaceEndOfTextCharacter } from "../../src/pipeline/auxiliary/end-of-text";
 import { replaceEscapeCharacter } from "../../src/pipeline/auxiliary/escape-character";
 import { replaceFormFeedCharacter } from "../../src/pipeline/auxiliary/form-feed";
 import { replaceTabCharacter } from "../../src/pipeline/auxiliary/tab";
 import { replaceVerticalTabCharacter } from "../../src/pipeline/auxiliary/vertical-tab";
+import { replacenewlineCharacter } from "../../src/pipeline/auxiliary/newline";
 import { strictEqual } from "assert";
 
 /**
@@ -110,6 +116,22 @@ export function testEscape(): void {
 			describe("beverages", function() {
 				it("should have vertical tabs", function() {
 					strictEqual(replaceVerticalTabCharacter(inputBeverages), expectedBeverages);
+				});
+			});
+		});
+		// End of text
+		describe("endOfText", function() {
+			describe("junkFood", function() {
+				it("should have end of text", function() {
+					strictEqual(replaceEndOfTextCharacter(inputJunkFood), expectedJunkFood);
+				});
+			});
+		});
+		// New line
+		describe("newLine", function() {
+			describe("martialArts", function() {
+				it("should have new line", function() {
+					strictEqual(replacenewlineCharacter(inputMartialArts), expectedMartialArts);
 				});
 			});
 		});

@@ -10,6 +10,11 @@ Copyright 2020 cpuabuse.com
 // Not sorted because dependent
 
 /**
+ * ASCII number for the end of text character.
+ */
+const endOfTextNumber: number = 3;
+
+/**
  * ASCII number for the alert(bell) character.
  */
 const alertNumber: number = 7;
@@ -18,10 +23,17 @@ const alertNumber: number = 7;
  * ASCII number for backspace character.
  */
 const backspaceNumber: number = 8;
+
 /**
  * ASCII number for tab character.
  */
 const tabNumber: number = 9;
+
+/**
+ * ASCII number for new line.
+ */
+const newlineNumber: number = 10;
+
 /**
  * ASCII number for vertical tab character.
  */
@@ -30,7 +42,7 @@ const verticalTabNumber: number = 11;
 /**
  * ASCII number for the form feed character.
  */
-export const formFeedNumber: number = 12;
+const formFeedNumber: number = 12;
 
 /**
  * ASCII number for carriage return character.
@@ -86,3 +98,13 @@ export const tab: string = String.fromCharCode(tabNumber);
  * The vertical tab character.
  */
 export const verticalTab: string = String.fromCharCode(verticalTabNumber);
+
+/**
+ * The end of text character.
+ */
+export const endOfText: string = String.fromCharCode(endOfTextNumber);
+
+/**
+ * The newline character.
+ */
+export const newline: string = String.fromCharCode(newlineNumber);
