@@ -19,5 +19,3 @@ export function testUnit(): void {
 		testNoTraillingNewline(); // eslint-disable-line mocha/no-setup-in-describe
 	});
 }
-
-testUnit();
