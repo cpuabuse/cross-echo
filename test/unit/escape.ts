@@ -12,7 +12,6 @@ import {
 	beverages as expectedBeverages,
 	countries as expectedCountries,
 	fruitTable as expectedFruitTable,
-	path as expectedPath,
 	planets as expectedPlanets,
 	ringing as expectedRinging,
 	snakes as expectedSnakes
@@ -22,13 +21,11 @@ import {
 	beverages as inputBeverages,
 	countries as inputCountries,
 	fruitTable as inputFruitTable,
-	path as inputPath,
 	planets as inputPlanets,
 	ringing as inputRinging,
 	snakes as inputSnakes
 } from "../input/pipeline";
 import { replaceAlertCharacters } from "../../src/pipeline/auxiliary/alert";
-import { replaceBackslashCharacters } from "../../src/pipeline/auxiliary/backslash";
 import { replaceBackspaceCharacters } from "../../src/pipeline/auxiliary/backspace";
 import { replaceCarriageReturnCharacters } from "../../src/pipeline/auxiliary/carriage-return";
 import { replaceEscapeCharacters } from "../../src/pipeline/auxiliary/escape-character";
@@ -47,15 +44,6 @@ export function testEscape(): void {
 			describe("ringing", function() {
 				it("should have alert character at the end of each ring", function() {
 					strictEqual(replaceAlertCharacters(inputRinging), expectedRinging);
-				});
-			});
-		});
-
-		// Backslash
-		describe("backslash", function() {
-			describe("path", function() {
-				it("should have a single backslash", function() {
-					strictEqual(replaceBackslashCharacters(inputPath), expectedPath);
 				});
 			});
 		});
