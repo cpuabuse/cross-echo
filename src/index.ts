@@ -21,14 +21,27 @@
  */
 
 import { Command } from "commander";
+import getStdin from "get-stdin";
 
 /**
  * Flags provided in the command line.
  */
 interface Flags {
 	noTrailingNewline: boolean;
-	disabledBackslash: boolean;
-	enabledBackslash: boolean;
+	disableBackslash: boolean;
+	enableBackslash: boolean;
+}
+
+/**
+ * Literal empty string.
+ */
+const emptyString: string = "";
+
+/**
+ * Parsed arguments from command line.
+ */
+interface ParsedArgs extends Flags {
+	stdin: string;
 }
 
 /**
@@ -37,19 +50,19 @@ interface Flags {
 function echo(text: string, flags: Flags): void {
 	// Do not output a trailing newline.
 
-	// if (flags.noTrailingNewline) {
-	// 	text = noNewline(text); // eslint-disable-line no-param-reassign
-	// }
+	if (flags.noTrailingNewline) {
+		text = noNewline(text); // eslint-disable-line no-param-reassign
+	}
 
 	// // Disable interpretation of backslash escape sequences. This is the default.
-	// if (flags.disabledBackslash) {
+	// if (flags.disableBackslash) {
 	// 	text = backslashOff(text); // eslint-disable-line no-param-reassign
 	// }
 
-	// // Enable interpretation of backslash escape sequences
-	// if (flags.enabledBackslash) {
-	// 	text = backslashOn(text); // eslint-disable-line no-param-reassign
-	// }
+	// Enable interpretation of backslash escape sequences
+	if (flags.enableBackslash) {
+		text = backslashOn(text); // eslint-disable-line no-param-reassign
+	}
 	log(text);
 }
 
@@ -63,9 +76,58 @@ function log(text: string): void {
 }
 
 /**
+ * Parse Arguments
+ */
+async function parseArgs(): Promise<ParsedArgs> {
+	let program: Command = new Command();
+
+	// Program metadeta
+	program.version("0.0.1");
+	program.description(`Write arguments to the standard output.
+
+Display the ARGs on the standard output followed by a newline.`);
+	program.on("--help", function() {
+		// eslint-disable-next-line no-console
+		console.log(`
+Examples:
+    echo -n   Do not append a newline.
+    echo -    Write arguments to the standard output.`);
+	});
+
+	// Initialize flags
+	// TODO: add "name" before "option"
+	program.option("-n", "do not append a newline");
+	program.option("-e", "enable interpretation of the following backslash escapes");
+	program.option("-E", "explicitly suppress interpretation of backslash escapes");
+	program.parse(process.argv);
+
+	console.log(program);
+	/**
+	 * Checks if the flag is set to true.
+	 */
+	function checkFlag(flag: string): boolean {
+		if (Object.prototype.hasOwnProperty.call(program, flag)) {
+			if (program[flag] === true) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	return {
+		disabledBackslash: checkFlag("E"),
+		enabledBackslash: checkFlag("e"),
+		noTrailingNewline: checkFlag("n"),
+		stdin: process.stdin.isTTY ? await getStdin() : emptyString
+	} as ParsedArgs;
+}
+
+/**
  * Main function.
  */
-function main() {}
+async function main(): Promise<void> {
+	console.log(await parseArgs());
+}
 
 // Call the main
 main();
