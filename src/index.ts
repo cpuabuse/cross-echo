@@ -61,7 +61,7 @@ function echo(text: string, flags: Flags): void {
 
 	// Enable interpretation of backslash escape sequences
 	if (flags.enableBackslash) {
-		text = backslashOn(text); // eslint-disable-line no-param-reassign
+		text = enableBackslash(text); // eslint-disable-line no-param-reassign
 	}
 	log(text);
 }
