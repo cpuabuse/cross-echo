@@ -9,6 +9,7 @@ import { replaceBackspaceCharacters } from "./auxiliary/backspace";
 import { replaceCarriageReturnCharacters } from "./auxiliary/carriage-return";
 import { replaceEscapeCharacters } from "./auxiliary/escape";
 import { replaceFormFeedCharacters } from "./auxiliary/form-feed";
+import { replaceNewlineCharacters } from "./auxiliary/newline";
 import { replaceTabCharacters } from "./auxiliary/tab";
 import { replaceVerticalTabCharacters } from "./auxiliary/vertical-tab";
 
@@ -25,6 +26,7 @@ export function enableBackslash(text: string): string {
 			result = replaceCarriageReturnCharacters(result);
 			result = replaceEscapeCharacters(result);
 			result = replaceFormFeedCharacters(result);
+			result = replaceNewlineCharacters(result);
 			result = replaceTabCharacters(result);
 			result = replaceVerticalTabCharacters(result);
 			return result;

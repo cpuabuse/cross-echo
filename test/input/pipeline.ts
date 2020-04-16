@@ -60,3 +60,13 @@ export const junkFood: string = `Hot-dog\\cHamburguer\\cPizza`;
  * A list of martial-arts separated by `\n`
  */
 export const martialArts: string = `Karate\\nJiu-Jitsu\\nBoxe`;
+
+/**
+ * A list of electronics devices separated by `\a`
+ */
+export const electronics: string = `computer\\\\afridge\\\\a`;
+
+/**
+ * A list of cities with newlines.
+ */
+export const cities: string = "Tokyo\\r\\nBerlin\\r\\nNairobi\\r\\n";
