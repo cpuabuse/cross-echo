@@ -14,6 +14,6 @@ import { backspace } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replaceBackspaceCharacter(text: string): string {
+export function replaceBackspaceCharacters(text: string): string {
 	return text.split("\\b").join(backspace);
 }

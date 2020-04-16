@@ -14,6 +14,6 @@ import { endOfText } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replaceEndOfTextCharacter(text: string): string {
+export function replaceEndOfTextCharacters(text: string): string {
 	return text.split("\\c").join(endOfText);
 }

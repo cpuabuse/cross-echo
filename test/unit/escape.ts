@@ -12,8 +12,6 @@ import {
 	beverages as expectedBeverages,
 	countries as expectedCountries,
 	fruitTable as expectedFruitTable,
-	junkFood as expectedJunkFood,
-	martialArts as expectedMartialArts,
 	path as expectedPath,
 	planets as expectedPlanets,
 	ringing as expectedRinging,
@@ -24,23 +22,19 @@ import {
 	beverages as inputBeverages,
 	countries as inputCountries,
 	fruitTable as inputFruitTable,
-	junkFood as inputJunkFood,
-	martialArts as inputMartialArts,
 	path as inputPath,
 	planets as inputPlanets,
 	ringing as inputRinging,
 	snakes as inputSnakes
 } from "../input/pipeline";
-import { replaceAlertCharacter } from "../../src/pipeline/auxiliary/alert";
-import { replaceBackslashCharacter } from "../../src/pipeline/auxiliary/backslash";
-import { replaceBackspaceCharacter } from "../../src/pipeline/auxiliary/backspace";
-import { replaceCarriageReturnCharacter } from "../../src/pipeline/auxiliary/carriage-return";
-import { replaceEndOfTextCharacter } from "../../src/pipeline/auxiliary/end-of-text";
-import { replaceEscapeCharacter } from "../../src/pipeline/auxiliary/escape-character";
-import { replaceFormFeedCharacter } from "../../src/pipeline/auxiliary/form-feed";
-import { replaceTabCharacter } from "../../src/pipeline/auxiliary/tab";
-import { replaceVerticalTabCharacter } from "../../src/pipeline/auxiliary/vertical-tab";
-import { replacenewlineCharacter } from "../../src/pipeline/auxiliary/newline";
+import { replaceAlertCharacters } from "../../src/pipeline/auxiliary/alert";
+import { replaceBackslashCharacters } from "../../src/pipeline/auxiliary/backslash";
+import { replaceBackspaceCharacters } from "../../src/pipeline/auxiliary/backspace";
+import { replaceCarriageReturnCharacters } from "../../src/pipeline/auxiliary/carriage-return";
+import { replaceEscapeCharacters } from "../../src/pipeline/auxiliary/escape-character";
+import { replaceFormFeedCharacters } from "../../src/pipeline/auxiliary/form-feed";
+import { replaceTabCharacters } from "../../src/pipeline/auxiliary/tab";
+import { replaceVerticalTabCharacters } from "../../src/pipeline/auxiliary/vertical-tab";
 import { strictEqual } from "assert";
 
 /**
@@ -52,7 +46,7 @@ export function testEscape(): void {
 		describe("alert", function() {
 			describe("ringing", function() {
 				it("should have alert character at the end of each ring", function() {
-					strictEqual(replaceAlertCharacter(inputRinging), expectedRinging);
+					strictEqual(replaceAlertCharacters(inputRinging), expectedRinging);
 				});
 			});
 		});
@@ -61,7 +55,7 @@ export function testEscape(): void {
 		describe("backslash", function() {
 			describe("path", function() {
 				it("should have a single backslash", function() {
-					strictEqual(replaceBackslashCharacter(inputPath), expectedPath);
+					strictEqual(replaceBackslashCharacters(inputPath), expectedPath);
 				});
 			});
 		});
@@ -70,7 +64,7 @@ export function testEscape(): void {
 		describe("backspace", function() {
 			describe("animals", function() {
 				it("should have backspace characters", function() {
-					strictEqual(replaceBackspaceCharacter(inputAnimals), expectedAnimals);
+					strictEqual(replaceBackspaceCharacters(inputAnimals), expectedAnimals);
 				});
 			});
 		});
@@ -79,7 +73,7 @@ export function testEscape(): void {
 		describe("carriage return", function() {
 			describe("planets", function() {
 				it("should have carriage return characters", function() {
-					strictEqual(replaceCarriageReturnCharacter(inputPlanets), expectedPlanets);
+					strictEqual(replaceCarriageReturnCharacters(inputPlanets), expectedPlanets);
 				});
 			});
 		});
@@ -88,7 +82,7 @@ export function testEscape(): void {
 		describe("escape", function() {
 			describe("snakes", function() {
 				it("should have escape characters", function() {
-					strictEqual(replaceEscapeCharacter(inputSnakes), expectedSnakes);
+					strictEqual(replaceEscapeCharacters(inputSnakes), expectedSnakes);
 				});
 			});
 		});
@@ -97,7 +91,7 @@ export function testEscape(): void {
 		describe("formFeed", function() {
 			describe("countries", function() {
 				it("should have form feed characters", function() {
-					strictEqual(replaceFormFeedCharacter(inputCountries), expectedCountries);
+					strictEqual(replaceFormFeedCharacters(inputCountries), expectedCountries);
 				});
 			});
 		});
@@ -106,7 +100,7 @@ export function testEscape(): void {
 		describe("tab", function() {
 			describe("fruitTable", function() {
 				it("should have tabs", function() {
-					strictEqual(replaceTabCharacter(inputFruitTable), expectedFruitTable);
+					strictEqual(replaceTabCharacters(inputFruitTable), expectedFruitTable);
 				});
 			});
 		});
@@ -115,23 +109,7 @@ export function testEscape(): void {
 		describe("verticalTab", function() {
 			describe("beverages", function() {
 				it("should have vertical tabs", function() {
-					strictEqual(replaceVerticalTabCharacter(inputBeverages), expectedBeverages);
-				});
-			});
-		});
-		// End of text
-		describe("endOfText", function() {
-			describe("junkFood", function() {
-				it("should have end of text", function() {
-					strictEqual(replaceEndOfTextCharacter(inputJunkFood), expectedJunkFood);
-				});
-			});
-		});
-		// New line
-		describe("newLine", function() {
-			describe("martialArts", function() {
-				it("should have new line", function() {
-					strictEqual(replacenewlineCharacter(inputMartialArts), expectedMartialArts);
+					strictEqual(replaceVerticalTabCharacters(inputBeverages), expectedBeverages);
 				});
 			});
 		});

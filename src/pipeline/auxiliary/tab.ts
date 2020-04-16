@@ -14,6 +14,6 @@ import { tab } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replaceTabCharacter(text: string): string {
+export function replaceTabCharacters(text: string): string {
 	return text.split("\\t").join(tab);
 }
