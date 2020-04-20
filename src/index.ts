@@ -22,7 +22,6 @@
 
 import { Command } from "commander";
 import { enableBackslash } from "./pipeline/enable-backslash";
-import getStdin from "get-stdin";
 
 /**
  * Flags provided in the command line.
@@ -127,6 +126,7 @@ Examples:
  */
 async function main(): Promise<void> {
 	console.log(await parseArgs());
+	echo();
 }
 
 // Call the main
