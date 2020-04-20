@@ -21,6 +21,7 @@
  */
 
 import { Command } from "commander";
+import { enableBackslash } from "./pipeline/enable-backslash";
 import getStdin from "get-stdin";
 
 /**
@@ -48,12 +49,6 @@ interface ParsedArgs extends Flags {
  * A function performing file processing, mocking behavoir of linux echo command.
  */
 function echo(text: string, flags: Flags): void {
-	// Do not output a trailing newline.
-
-	if (flags.noTrailingNewline) {
-		text = noNewline(text); // eslint-disable-line no-param-reassign
-	}
-
 	// // Disable interpretation of backslash escape sequences. This is the default.
 	// if (flags.disableBackslash) {
 	// 	text = backslashOff(text); // eslint-disable-line no-param-reassign
@@ -64,6 +59,11 @@ function echo(text: string, flags: Flags): void {
 		text = enableBackslash(text); // eslint-disable-line no-param-reassign
 	}
 	log(text);
+
+	// Do not output a trailing newline.
+	if (!flags.noTrailingNewline) {
+		log("\n");
+	}
 }
 
 /**
