@@ -20,42 +20,43 @@
  * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+import { emptyString, spaceString } from "./defaults";
 import { Command } from "commander";
 import { enableBackslash as doEnableBackslash } from "./pipeline/enable-backslash";
 
 /**
- * Flags provided in the command line.
+ * Parsed arguments from command line.
  */
-interface Flags {
+interface ParsedArgs {
 	noTrailingNewline: boolean;
 	disableBackslash: boolean;
 	enableBackslash: boolean;
-}
-
-/**
- * Parsed arguments from command line.
- */
-interface ParsedArgs extends Flags {
-	text: string;
+	textArray: Array<string>;
 }
 
 /**
  * A function performing file processing, mocking behavoir of linux echo command.
  */
-function echo({ enableBackslash, noTrailingNewline, text }: ParsedArgs): void {
-	// // Disable interpretation of backslash escape sequences. This is the default.
-	// if (flags.disableBackslash) {
-	// 	text = backslashOff(text); // eslint-disable-line no-param-reassign
-	// }
+function echo({ disableBackslash, enableBackslash, noTrailingNewline, textArray }: ParsedArgs): void {
+	// The backslash processing is effectively on or off
+	let backslashIsEnabled: boolean = false;
 
-	// Enable interpretation of backslash escape sequences
-	if (enableBackslash) {
-		text = doEnableBackslash(text); // eslint-disable-line no-param-reassign
+	// Check if backslash processing was enabled
+	if (!disableBackslash && enableBackslash) {
+		backslashIsEnabled = true;
 	}
-	log(text);
+
+	// Iterate through texts
+	for (let i: number = 0; i < textArray.length; i++) {
+		let text: string = textArray[i];
+		log(backslashIsEnabled ? doEnableBackslash(text) : text);
+		if (i + 1 < textArray.length) {
+			log(spaceString);
+		}
+	}
 
 	// Do not output a trailing newline.
-	if (noTrailingNewline) {
+	if (!noTrailingNewline) {
 		log("\n");
 	}
 }
@@ -88,6 +89,15 @@ Examples:
     echo -    Write arguments to the standard output.`);
 	});
 
+	// Array of text strings to process
+	let textArray: Promise<Array<string>> = new Promise(function (resolve) {
+		// Get strings; The method action is synchronous.
+		program.arguments("[strings...]").action(function (argStrings) {
+			// Resolve the promise
+			resolve(argStrings.length > 0 ? argStrings : [emptyString]);
+		});
+	});
+
 	// Initialize flags
 	// TODO: add "name" before "option"
 	program.option("-n, --no-newline", "do not append a newline");
@@ -108,10 +118,12 @@ Examples:
 	}
 
 	return {
-		disableBackslash: checkFlag("E"),
-		enableBackslash: checkFlag("e"),
-		noTrailingNewline: checkFlag("n")
-	} as ParsedArgs;
+		disableBackslash: checkFlag("disableBackslash"),
+		enableBackslash: checkFlag("enableBackslash"),
+		// Special behavior for "--no-*" newline in "commander.js"
+		noTrailingNewline: !checkFlag("newline"),
+		textArray: await textArray
+	};
 }
 
 /**
