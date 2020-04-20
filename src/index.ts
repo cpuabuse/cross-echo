@@ -21,7 +21,7 @@
  */
 
 import { Command } from "commander";
-import { enableBackslash } from "./pipeline/enable-backslash";
+import { enableBackslash as doEnableBackslash } from "./pipeline/enable-backslash";
 
 /**
  * Flags provided in the command line.
@@ -33,34 +33,29 @@ interface Flags {
 }
 
 /**
- * Literal empty string.
- */
-const emptyString: string = "";
-
-/**
  * Parsed arguments from command line.
  */
 interface ParsedArgs extends Flags {
-	stdin: string;
+	text: string;
 }
 
 /**
  * A function performing file processing, mocking behavoir of linux echo command.
  */
-function echo(text: string, flags: Flags): void {
+function echo({ enableBackslash, noTrailingNewline, text }: ParsedArgs): void {
 	// // Disable interpretation of backslash escape sequences. This is the default.
 	// if (flags.disableBackslash) {
 	// 	text = backslashOff(text); // eslint-disable-line no-param-reassign
 	// }
 
 	// Enable interpretation of backslash escape sequences
-	if (flags.enableBackslash) {
-		text = enableBackslash(text); // eslint-disable-line no-param-reassign
+	if (enableBackslash) {
+		text = doEnableBackslash(text); // eslint-disable-line no-param-reassign
 	}
 	log(text);
 
 	// Do not output a trailing newline.
-	if (!flags.noTrailingNewline) {
+	if (noTrailingNewline) {
 		log("\n");
 	}
 }
@@ -85,7 +80,7 @@ async function parseArgs(): Promise<ParsedArgs> {
 	program.description(`Write arguments to the standard output.
 
 Display the ARGs on the standard output followed by a newline.`);
-	program.on("--help", function() {
+	program.on("--help", function () {
 		// eslint-disable-next-line no-console
 		console.log(`
 Examples:
@@ -95,12 +90,11 @@ Examples:
 
 	// Initialize flags
 	// TODO: add "name" before "option"
-	program.option("-n", "do not append a newline");
-	program.option("-e", "enable interpretation of the following backslash escapes");
-	program.option("-E", "explicitly suppress interpretation of backslash escapes");
+	program.option("-n, --no-newline", "do not append a newline");
+	program.option("-e, --enable-backslash", "enable interpretation of the following backslash escapes");
+	program.option("-E, --disable-backslash", "explicitly suppress interpretation of backslash escapes");
 	program.parse(process.argv);
 
-	console.log(program);
 	/**
 	 * Checks if the flag is set to true.
 	 */
@@ -114,10 +108,9 @@ Examples:
 	}
 
 	return {
-		disabledBackslash: checkFlag("E"),
-		enabledBackslash: checkFlag("e"),
-		noTrailingNewline: checkFlag("n"),
-		stdin: process.stdin.isTTY ? await getStdin() : emptyString
+		disableBackslash: checkFlag("E"),
+		enableBackslash: checkFlag("e"),
+		noTrailingNewline: checkFlag("n")
 	} as ParsedArgs;
 }
 
@@ -125,8 +118,7 @@ Examples:
  * Main function.
  */
 async function main(): Promise<void> {
-	console.log(await parseArgs());
-	echo();
+	echo(await parseArgs());
 }
 
 // Call the main
