@@ -14,6 +14,6 @@ import { alert } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replaceAlertCharacter(text: string): string {
+export function replaceAlertCharacters(text: string): string {
 	return text.split("\\a").join(alert);
 }

@@ -14,6 +14,6 @@ import { formFeed } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replaceFormFeedCharacter(text: string): string {
+export function replaceFormFeedCharacters(text: string): string {
 	return text.split("\\f").join(formFeed);
 }

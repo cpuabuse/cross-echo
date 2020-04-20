@@ -7,7 +7,15 @@ Copyright 2020 cpuabuse.com
  * A file containing all the variables and constants.
  */
 
-// Not sorted because dependent
+/**
+ * Literally an empty string.
+ */
+export const emptyString: string = "";
+
+/**
+ * Literally a space character.
+ */
+export const spaceString: string = " ";
 
 /**
  * ASCII number for the end of text character.

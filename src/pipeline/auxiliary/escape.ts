@@ -14,6 +14,6 @@ import { escape } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replaceEscapeCharacter(text: string): string {
+export function replaceEscapeCharacters(text: string): string {
 	return text.split("\\e").join(escape);
 }

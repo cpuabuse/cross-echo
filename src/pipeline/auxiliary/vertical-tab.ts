@@ -14,6 +14,6 @@ import { verticalTab } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replaceVerticalTabCharacter(text: string): string {
+export function replaceVerticalTabCharacters(text: string): string {
 	return text.split("\\v").join(verticalTab);
 }

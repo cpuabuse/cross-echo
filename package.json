@@ -20,7 +20,7 @@
 	},
 	"homepage": "https://github.com/cpuabuse/cross-echo#readme",
 	"dependencies": {
-		"commander": "^5.0.0"
+		"commander": "^4.0.1"
 	},
 	"devDependencies": {
 		"@types/mocha": "^7.0.2",

@@ -7,7 +7,7 @@
  * Performs a series of unit tests.
  */
 
-import { testEscape } from "./escape";
+import { testEscape } from "./enable-backslash";
 import { testNoTraillingNewline } from "./no-trailing-newline";
 
 /**

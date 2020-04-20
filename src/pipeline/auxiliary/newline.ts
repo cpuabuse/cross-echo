@@ -14,6 +14,6 @@ import { newline } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replacenewlineCharacter(text: string): string {
+export function replaceNewlineCharacters(text: string): string {
 	return text.split("\\n").join(newline);
 }

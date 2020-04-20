@@ -14,6 +14,6 @@ import { carriageReturn } from "../../defaults";
  * @param text String to replace
  * @returns String with replaced characters
  */
-export function replaceCarriageReturnCharacter(text: string): string {
+export function replaceCarriageReturnCharacters(text: string): string {
 	return text.split("\\r").join(carriageReturn);
 }
