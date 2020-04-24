@@ -13,26 +13,9 @@
 export const animals: string = `Lion\\bTiger\\bDog\\b`;
 
 /**
- * Rings separated by `\a`
+ * A list of beverages separated by `\v`
  */
-export const ringing: string = `Ring\\a
-Ring\\a
-Ring\\a`;
-
-/**
- * A path separated by `\`
- */
-export const path: string = "C:\\\\";
-
-/**
- * A list of planets separated by `\r`
- */
-export const planets: string = `Earth\\rVenus\\rJupiter\\r`;
-
-/**
- * A list of snakes separated by `\e`
- */
-export const snakes: string = `Ball python\\e00Anaconda`;
+export const beverages: string = `Whiskey\\vVodka\\vCola`;
 
 /**
  * A list of countries separated by `\f`
@@ -47,11 +30,6 @@ Orange\\t200\\tOrange
 Apple\\t250\\tRed`;
 
 /**
- * A list of beverages separated by `\v`
- */
-export const beverages: string = `Whiskey\\vVodka\\vCola`;
-
-/**
  * A list of junk food sepated by `\c`
  */
 export const junkFood: string = `Hot-dog\\cHamburguer\\cPizza`;
@@ -60,3 +38,25 @@ export const junkFood: string = `Hot-dog\\cHamburguer\\cPizza`;
  * A list of martial-arts separated by `\n`
  */
 export const martialArts: string = `Karate\\nJiu-Jitsu\\nBoxe`;
+
+/**
+ * A path separated by `\`
+ */
+export const path: string = "C:\\\\";
+
+/**
+ * A list of planets separated by `\r`
+ */
+export const planets: string = `Earth\\rVenus\\rJupiter\\r`;
+
+/**
+ * Rings separated by `\a`
+ */
+export const ringing: string = `Ring\\a
+Ring\\a
+Ring\\a`;
+
+/**
+ * A list of snakes separated by `\e`
+ */
+export const snakes: string = `Ball python\\e00Anaconda`;

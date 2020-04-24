@@ -8,31 +8,14 @@
  */
 
 /**
- * A directory path with a backslash.
- */
-export const path: string = "C:\\";
-
-/**
  * A list of animals with backspaces between them.
  */
 export const animals: string = `Lion\u0008Tiger\u0008Dog\u0008`;
 
 /**
- * A sequence of rings with the alert character.
+ * List of beverages with vertical tabs.
  */
-export const ringing: string = `Ring\u0007
-Ring\u0007
-Ring\u0007`;
-
-/**
- * A list of planets with carriage returns.
- */
-export const planets: string = `Earth\u000DVenus\u000DJupiter\u000D`;
-
-/**
- * A list of snakes with the command escaped.
- */
-export const snakes: string = `Ball python\u001B00Anaconda`;
+export const beverages: string = `Whiskey\u000BVodka\u000BCola`;
 
 /**
  * A list of countries with form feed.
@@ -47,11 +30,6 @@ Orange	200	Orange
 Apple	250	Red`;
 
 /**
- * List of beverages with vertical tabs.
- */
-export const beverages: string = `Whiskey\u000BVodka\u000BCola`;
-
-/**
  * List of Junk foods with End of text character.
  */
 export const junkFood: string = `Hot-dog\u0003Hamburguer\u0003Pizza`;
@@ -60,3 +38,25 @@ export const junkFood: string = `Hot-dog\u0003Hamburguer\u0003Pizza`;
  * List of martial-arts with newline character.
  */
 export const martialArts: string = `Karate\u000AJiu-Jitsu\u000ABoxe`;
+
+/**
+ * A directory path with a backslash.
+ */
+export const path: string = "C:\\";
+
+/**
+ * A list of planets with carriage returns.
+ */
+export const planets: string = `Earth\u000DVenus\u000DJupiter\u000D`;
+
+/**
+ * A sequence of rings with the alert character.
+ */
+export const ringing: string = `Ring\u0007
+Ring\u0007
+Ring\u0007`;
+
+/**
+ * A list of snakes with the command escaped.
+ */
+export const snakes: string = `Ball python\u001B00Anaconda`;
