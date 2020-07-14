@@ -68,6 +68,11 @@ const escapeNumber: number = 27;
 const backslashNumber: number = 92;
 
 /**
+ * Numbers to be tested for hexadecimal values.
+ */
+export const arrayOfNumbers: Array<string> = "0123456789".split(emptyString);
+
+/**
  * The backslash character.
  */
 export const backslash: string = String.fromCharCode(backslashNumber);
