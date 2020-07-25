@@ -7,6 +7,8 @@
 
 /**
  * Entry point for the project.
+ *
+ * We are operating on buffers instead of strings, since strings implicitly hold unicode values for extended ASCII. By exclusively using buffers the values are preserved.
  */
 
 /**

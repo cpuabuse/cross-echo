@@ -70,7 +70,7 @@ const backslashNumber: number = 92;
 /**
  * Numbers to be tested for hexadecimal values.
  */
-export const arrayOfNumbers: Array<string> = "0123456789".split(emptyString);
+export const arrayOfHexNumbers: Array<string> = "0123456789abcdefABCDEF".split(emptyString);
 
 /**
  * The backslash character.

@@ -19,7 +19,7 @@ import { replaceVerticalTabCharacters } from "./auxiliary/vertical-tab";
 export function enableBackslash(text: string): string {
 	return text
 		.split("\\\\")
-		.map(function(subtext) {
+		.map(function (subtext) {
 			let result: string = subtext;
 			result = replaceAlertCharacters(result);
 			result = replaceBackspaceCharacters(result);
