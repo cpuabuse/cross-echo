@@ -67,7 +67,7 @@ function echo({ disableBackslash, enableBackslash, noTrailingNewline, textArray 
  * Prints a text.
  * @param text Text to print.
  */
-function log(text: string): void {
+function log(text: string | Buffer): void {
 	// eslint-disable-next-line no-console
 	process.stdout.write(text);
 }

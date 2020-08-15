@@ -2,12 +2,11 @@
 
 Cross platform echo command
 
-### Powershell/Powershell Core and encoding
+### Terminal and encoding
 
-The output can be garbled if the Powershell's encoding is not set to `UTF8`.
-For interpretation of the escaped characters with `\0nnn`, `\nnn` and `\xnn`, to use extended ASCII characters, since neither Powershell's `UTF8` or `ASCII` do not support them, it is necessary to redirect the output. Although a sequence of bytes from extended ASCII characters having an equivalent in `UTF8` is fine.
+Depending on the terminal and encoding, interpretation of the escaped characters with `\0nnn`, `\nnn` and `\xnn` for extended ASCII characters the output might be replaced with other printable characters (Powershell, Windows Powershell Core, Windows Command Line). Although a sequence of bytes from extended ASCII characters representing a character in `UTF8` is fine. This might be fixed with process output redirection, or using a third-party terminal.
 
-#### Setting encoding in Powershell
+#### Setting encoding in Powershell to UTF8
 
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
