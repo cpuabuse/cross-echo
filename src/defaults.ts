@@ -18,6 +18,46 @@ export const emptyString: string = "";
 export const spaceString: string = " ";
 
 /**
+ * Numbers to be tested for hexadecimal values.
+ */
+export const hexArrayOfDigits: Array<string> = "0123456789abcdefABCDEF".split(emptyString);
+
+/**
+ * Literally the separator for hexadecimal values.
+ */
+export const hexSeparator: string = "\\x";
+
+/**
+ * Max number of digits for hexadecimal values.
+ */
+export const hexMaxNumberOfDigits: number = 2;
+
+/**
+ * Hexadecimal radix.
+ */
+export const hexRadix: number = 16;
+
+/**
+ * Numbers to be tested for octal values.
+ */
+export const octArrayOfDigits: Array<string> = "01234567".split(emptyString);
+
+/**
+ * Literally the separator for octal values.
+ */
+export const octSeparator: string = "\\0";
+
+/**
+ * Max number of digits for octal values.
+ */
+export const octMaxNumberOfDigits: number = 3;
+
+/**
+ * Octal radix.
+ */
+export const octRadix: number = 8;
+
+/**
  * ASCII number for the end of text character.
  */
 const endOfTextNumber: number = 3;
@@ -66,11 +106,6 @@ const escapeNumber: number = 27;
  * ASCII number for backslash character.
  */
 const backslashNumber: number = 92;
-
-/**
- * Numbers to be tested for hexadecimal values.
- */
-export const arrayOfHexNumbers: Array<string> = "0123456789abcdefABCDEF".split(emptyString);
 
 /**
  * The backslash character.

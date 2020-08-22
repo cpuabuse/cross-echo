@@ -4,12 +4,12 @@
 */
 
 import { backslash } from "../defaults";
+import { bufferReplace } from "./auxiliary/buffer-replace";
 import { replaceAlertCharacters } from "./auxiliary/alert";
 import { replaceBackspaceCharacters } from "./auxiliary/backspace";
 import { replaceCarriageReturnCharacters } from "./auxiliary/carriage-return";
 import { replaceEscapeCharacters } from "./auxiliary/escape";
 import { replaceFormFeedCharacters } from "./auxiliary/form-feed";
-import { replaceHexCharacters } from "./auxiliary/hex";
 import { replaceNewlineCharacters } from "./auxiliary/newline";
 import { replaceTabCharacters } from "./auxiliary/tab";
 import { replaceVerticalTabCharacters } from "./auxiliary/vertical-tab";
@@ -38,7 +38,7 @@ export function enableBackslash(text: string): Buffer {
 				result = replaceVerticalTabCharacters(result);
 
 				// Buffer stage
-				let buffer: Buffer = replaceHexCharacters(result);
+				let buffer: Buffer = bufferReplace(result);
 
 				// Yield
 				yield buffer;
