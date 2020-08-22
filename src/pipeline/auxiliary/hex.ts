@@ -19,11 +19,17 @@ export function replaceHexCharacters(text: string): Buffer {
 	let arrayOfNumbers: Array<string> = arrayOfHexNumbers;
 	let sentences: Array<string> = text.split(separator);
 	let radix: number = 16;
-	let numberOfDigits: number = 2;
+	let maxNumberOfDigits: number = 2;
 	return sentences.slice(1).reduce<Buffer>(function (accumulator, sentence) {
-		if (sentence.length > 1) {
+		if (sentence.length > 0) {
 			let characters: Array<string> = sentence.split(emptyString);
-			if (arrayOfNumbers.includes(characters[0]) && arrayOfNumbers.includes(characters[1])) {
+			let numberOfDigits: number = 0;
+			for (; numberOfDigits < maxNumberOfDigits; numberOfDigits++) {
+				if (!arrayOfNumbers.includes(characters[numberOfDigits])) {
+					break;
+				}
+			}
+			if (numberOfDigits > 0) {
 				// If we are here, then we replace
 				let finalNumber: number = parseInt(sentence.substring(0, numberOfDigits), radix);
 				// If there is nothing left in the sentence, then the substring will return an empty string
