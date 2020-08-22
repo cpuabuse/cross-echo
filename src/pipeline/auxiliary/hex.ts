@@ -20,7 +20,7 @@ export function replaceHexCharacters(text: string): Buffer {
 	let sentences: Array<string> = text.split(separator);
 	let radix: number = 16;
 	let numberOfDigits: number = 2;
-	return sentences.slice(1).reduce(function (accumulator, sentence) {
+	return sentences.slice(1).reduce<Buffer>(function (accumulator, sentence) {
 		if (sentence.length > 1) {
 			let characters: Array<string> = sentence.split(emptyString);
 			if (arrayOfNumbers.includes(characters[0]) && arrayOfNumbers.includes(characters[1])) {

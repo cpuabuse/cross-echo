@@ -25,7 +25,6 @@ export function enableBackslash(text: string): Buffer {
 	return Buffer.concat([
 		...(function* (): Generator<Buffer, void, void> {
 			const sentences: Array<string> = text.split("\\\\");
-			// eslint-disable-next-line no-restricted-syntax
 			for (const [index, sentence] of sentences.entries()) {
 				// Replacement stage
 				let result: string = sentence;
