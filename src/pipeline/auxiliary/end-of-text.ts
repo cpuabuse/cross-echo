@@ -7,13 +7,11 @@
  * End of text replacement.
  */
 
-import { endOfText } from "../../defaults";
-
 /**
  * A function that replaces `\c` with the end of text character.
  * @param text String to replace
  * @returns String with replaced characters
  */
 export function replaceEndOfTextCharacters(text: string): string {
-	return text.split("\\c").join(endOfText);
+	return text.split("\\c")[0];
 }

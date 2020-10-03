@@ -58,11 +58,6 @@ export const octMaxNumberOfDigits: number = 3;
 export const octRadix: number = 8;
 
 /**
- * ASCII number for the end of text character.
- */
-const endOfTextNumber: number = 3;
-
-/**
  * ASCII number for the alert(bell) character.
  */
 const alertNumber: number = 7;
@@ -146,11 +141,6 @@ export const tab: string = String.fromCharCode(tabNumber);
  * The vertical tab character.
  */
 export const verticalTab: string = String.fromCharCode(verticalTabNumber);
-
-/**
- * The end of text character.
- */
-export const endOfText: string = String.fromCharCode(endOfTextNumber);
 
 /**
  * The newline character.

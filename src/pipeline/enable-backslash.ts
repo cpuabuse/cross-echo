@@ -8,6 +8,7 @@ import { bufferReplace } from "./auxiliary/buffer-replace";
 import { replaceAlertCharacters } from "./auxiliary/alert";
 import { replaceBackspaceCharacters } from "./auxiliary/backspace";
 import { replaceCarriageReturnCharacters } from "./auxiliary/carriage-return";
+import { replaceEndOfTextCharacters } from "./auxiliary/end-of-text";
 import { replaceEscapeCharacters } from "./auxiliary/escape";
 import { replaceFormFeedCharacters } from "./auxiliary/form-feed";
 import { replaceNewlineCharacters } from "./auxiliary/newline";
@@ -36,6 +37,7 @@ export function enableBackslash(text: string): Buffer {
 				result = replaceNewlineCharacters(result);
 				result = replaceTabCharacters(result);
 				result = replaceVerticalTabCharacters(result);
+				result = replaceEndOfTextCharacters(result);
 
 				// Buffer stage
 				let buffer: Buffer = bufferReplace(result);
