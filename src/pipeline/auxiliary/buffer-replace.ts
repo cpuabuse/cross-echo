@@ -39,6 +39,11 @@ interface BinaryInterpretation {
 	radix: number;
 
 	/**
+	 * Remove separator
+	 */
+	removeSeparator: boolean;
+
+	/**
 	 * A separator for signifying the begining of the interpretation sequence.
 	 */
 	separator: string;
@@ -70,12 +75,14 @@ export function bufferReplace(text: string): Buffer {
 			arrayOfDigits: hexArrayOfDigits,
 			maxNumberOfDigits: hexMaxNumberOfDigits,
 			radix: hexRadix,
+			removeSeparator: false,
 			separator: hexSeparator
 		},
 		{
 			arrayOfDigits: octArrayOfDigits,
 			maxNumberOfDigits: octMaxNumberOfDigits,
 			radix: octRadix,
+			removeSeparator: true,
 			separator: octSeparator
 		}
 	];
@@ -121,6 +128,12 @@ export function bufferReplace(text: string): Buffer {
 				]);
 			}
 		}
-		return Buffer.concat([accumulator, Buffer.from(interpretations[sentence.index].separator + sentence)]);
+		return Buffer.concat([
+			accumulator,
+			Buffer.from(
+				(interpretations[sentence.index].removeSeparator ? emptyString : interpretations[sentence.index].separator) +
+					sentence.value
+			)
+		]);
 	}, Buffer.from(sentences[0].value));
 }
