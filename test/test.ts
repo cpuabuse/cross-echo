@@ -8,6 +8,10 @@
  */
 
 import { testUnit } from "./unit/test";
+import { systemTest } from "./system/test";
 
 // Unit test
 testUnit();
+
+// System test
+systemTest();
